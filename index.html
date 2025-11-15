@@ -140,39 +140,57 @@
     </a>
     </div>
 
-    <script>
-    AOS.init({ once: true, offset: 0, duration: 1000 });
+<script>
+// Cursor trail
+const trailContainer2 = document.getElementById('cursor-trail-container2');
+document.addEventListener('mousemove', (e) => {
+    const triangle2 = document.createElement('div');
+    triangle2.className = 'trianglewhite5';
+    triangle2.style.left = `${e.clientX}px`;
+    triangle2.style.top = `${e.clientY}px`;
+    trailContainer2.appendChild(triangle2);
+    setTimeout(() => {
+        triangle2.style.opacity = '0';
+    }, 100);
+    setTimeout(() => {
+        triangle2.remove();
+    }, 1000);
+});
 
-    const slide1Video = document.getElementById('slide1-video');
-    let slide1Played = false;
+/* Disable right-click save on images */
+document.addEventListener("contextmenu", function (e) {
+    if (e.target.tagName === "IMG") {
+        e.preventDefault();
+    }
+});
+/* Disable dragging of images */
+document.addEventListener("dragstart", function (e) {
+    if (e.target.tagName === "IMG") {
+        e.preventDefault();
+    }
+});
+/* Disable long-press saving on mobile */
+document.querySelectorAll("img").forEach(img => {
+    img.setAttribute("oncontextmenu", "return false;");
+});
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const video = entry.target;
+// Typing effect
+const text = "Projects at the intersection of software and hardware";
+const speed = 40;
+let index = 0;
 
-            if(video.tagName.toLowerCase() !== 'video') return;
+function typeEffect() {
+    const heading = document.getElementById("typewriter");
+    heading.innerHTML = text.substring(0, index) + '<span class="red-cursor"></span>';
 
-            // Special case: slide1 plays only once
-            if(video.id === 'slide1-video') {
-                if(entry.isIntersecting && !slide1Played) {
-                    video.currentTime = 0;
-                    video.play();
-                    slide1Played = true;
-                }
-                return;
-            }
-            // Play/pause other videos based on visibility
-            if(entry.isIntersecting) {
-                video.currentTime = 0;
-                video.play();
-            } else {
-                video.pause();
-            }
-        });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('video').forEach(video => observer.observe(video));
-    </script>
+    if (index < text.length) {
+        index++;
+        setTimeout(typeEffect, speed);
+    }
+}
+// Start immediately when HTML is parsed
+document.addEventListener("DOMContentLoaded", typeEffect);
+</script>
 
 </body>
 </html>
