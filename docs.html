@@ -192,87 +192,128 @@
         </nav>
     </header>
 
-    <main class="main-content">
-        <section>
-            <h2 style="font-size: 24px;"><b>Rayvn is an IoT-driven autonomous rescue robotics system designed for disaster and crisis response. It combines <span style="color: orange; font-size: 24px;">aerial drones</span> and <span style="color: orange; font-size: 24px;">ground crawler bots</span> connected via a <span style="color: orange; font-size: 24px;">LoRa-based mesh network</span>, enabling offline, real-time victim detection, mapping, and communication in GPS-denied environments.</b></h2>
-            <div style="text-align: center; margin-top: 30px;">
-                <img src="articles.png" alt="News Articles" style="height: 630px; width: auto; max-width: 100%;">
-            </div>
-        </section>
-        <hr class="section-divider">
-        <section>
-            <h2>💫 Mission</h2>
-            <p>Rayvn aims to bridge communication gaps during disasters by fusing computer vision, thermal sensing, and AI-driven coordination into a unified rescue network.</p>
-        </section>
-        <hr class="section-divider">
-        <section>
-            <h2>🧠 Core Features</h2>
-            <ul class="doc-list">
-                <li>Autonomous Pathfinding (A*) — Efficient route generation for rescue navigation.</li>
-                <li>Swarm Coordination — Multi-agent task allocation between aerial and ground units.</li>
-                <li>Sensor Fusion — Combines camera, thermal, and gas/smoke data for robust detection.</li>
-                <li>LoRa Mesh Network — Offline, long-range communication across nodes.</li>
-                <li>AI-Assisted Detection — YOLOv8 + OpenCV victim recognition and hazard detection.</li>
-                <li>Rescue Dashboard — Flask command panel for live mapping and telemetry.</li>
-            </ul>
-        </section>
-
-        <hr class="section-divider">
-
-        <section>
-            <h2>🧩 System Architecture</h2>
-            <pre><code>
+<main class="main-content">
+<section>
+<h2>Overview</h2>
+<p><b>Rayvn is an IoT-driven autonomous rescue robotics system</b> combining aerial drones and rugged legged ground crawlers connected via a <b>LoRa-based mesh network</b>. It enables <b>offline, real-time victim and animal detection, mapping, and communication</b> in GPS-denied environments.<br><br><i>“Eyes in the sky, hope on the ground.”</i></p>
+<img src="articles.png" alt="Articles" style="width:100%;max-width:700px;display:block;margin:auto;">
+</section>
+<hr class="section-divider">
+<section>
+<h2>Mission</h2>
+<p>Rayvn bridges visibility and communication gaps during disasters using computer vision, thermal sensing, swarm AI, and autonomous robotics — improving situational awareness when every second matters.</p>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Problem Statement</h2>
+<p>Disasters often destroy communication networks, obscure visibility, and create dangerous environments for rescuers. Traditional search missions rely heavily on manual detection and slow, unreliable information flow.<br><br>Rayvn solves this with an <b>autonomous, self-healing rescue mesh</b> capable of mapping survivors and hazards <b>fully offline</b>.</p>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Real-World Applications</h2>
+<ul>
+<li>Disaster Response: earthquakes, floods, landslides</li>
+<li>Defense & Search Ops in GPS-denied zones</li>
+<li>Wildlife conservation & species monitoring</li>
+<li>Industrial safety: gas leaks, heat mapping</li>
+<li>Smart city underground inspection</li>
+</ul>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Workflow</h2>
+<ul>
+<li><b>Drone Scan:</b> Drone performs aerial survey using RGB + thermal imaging.</li>
+<li><b>Hotspot Detection:</b> YOLO + OpenCV detect heat signatures, motion, or human shapes.</li>
+<li><b>Crawler Deployment:</b> Drone deploys legged crawlers to navigate rubble and tight passages.</li>
+<li><b>Mesh Formation:</b> Crawlers form an autonomous LoRa mesh network.</li>
+<li><b>Mapping & Detection:</b> Crawlers scan areas using thermal, gas, smoke, and audio sensors.</li>
+<li><b>Dashboard Sync:</b> Data forms heatmaps and hazard clusters on the base station GUI.</li>
+<li><b>Drone Redeploy/Exit:</b> Depending on battery + mesh stability, drone stays, redeploys, or exits.</li>
+</ul>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Core Features</h2>
+<ul>
+<li>Autonomous Pathfinding (A*)</li>
+<li>Swarm coordination (drone + crawlers)</li>
+<li>Thermal + camera + gas + audio sensor fusion</li>
+<li>LoRa-based offline mesh network</li>
+<li>AI victim detection (YOLOv8 + OpenCV)</li>
+<li>Live rescue dashboard with telemetry</li>
+</ul>
+</section>
+<hr class="section-divider">
+<section>
+<h2>System Architecture</h2>
+<pre><code>
 +-----------------------------+
-|     Base Station GUI      |
+|       Base Station GUI      |
 +-----------------------------+
               ▲
-              │ LoRa Mesh (Multi-hop)
+              │  LoRa Mesh (Multi-hop)
               ▼
-+-----------------------------+       +-----------------------------+
-|   Aerial Drone Node (ROS)   | <-->  |   Ground Crawler Node (ROS) |
-|   ├─ Perception Node        |       |   ├─ Mapping Node           |
-|   ├─ Path Planner (A*)      |       |   ├─ Motion Controller      |
-|   ├─ Comm Node (LoRa Sim)   |       |   ├─ Comm Node (LoRa Sim)   |
-+-----------------------------+       +-----------------------------+
-      </code></pre>
-        </section>
-
-        <hr class="section-divider">
-
-        <section>
-            <h2>🌍 Market Scope</h2>
-            <p>Rayvn addresses a <b>$6B Serviceable Addressable Market (SAM)</b> in global disaster robotics, with an early adoption <b>SOM of $100M</b> across India and Southeast Asia.</p>
-        </section>
-        <hr class="section-divider">
-        <section>
-            <h2>💰 Revenue Model</h2>
-            <p>Rayvn operates on a <b>B2G + B2B hybrid model</b> — targeting government disaster response agencies, NGOs, and research institutions through solution-based contracts and modular hardware systems.</p>
-            <ul class="doc-list mt-3">
-                <li><b>Hardware Sales:</b> Revenue from modular drone and crawler units, LoRa kits, and base station hardware.</li>
-                <li><b>Software Licensing:</b> Subscription for the AI dashboard, analytics platform, and rescue coordination tools.</li>
-                <li><b>Maintenance & Training:</b> Annual service contracts and technician training programs for field teams.</li>
-                <li><b>Custom Deployments:</b> Tailored solutions for defense research, smart city, and humanitarian applications.</li>
-                <li><b>Data & Insights:</b> Secure analytics for partner agencies on disaster pattern recognition and post-event mapping.</li>
-            </ul>
-            <p class="mt-3 text-muted">Revenue streams will scale alongside pilot deployments, government partnerships, and university research collaborations.</p>
-        </section>
-
-        <hr class="section-divider">
-
-        <section>
-            <h2>⚙️ Tech Stack</h2>
-            <p><b>Languages:</b> Python, C, C++<br>
-                <b>Frameworks:</b> ROS, OpenCV, Flask, PyTorch<br>
-                <b>Hardware:</b> Raspberry Pi, LoRa modules, thermal sensors<br>
-                <b>Simulation:</b> Gazebo, RViz<br>
-                <b>Communication:</b> LoRa Mesh, MQTT<br>
-                <b>Tools:</b> Git, Docker, Linux</p>
-        </section>
-
-        <hr class="section-divider">
-
-        <p class="mt-12 text-muted text-center italic-text">When networks go silent, our bots speak.</p><br>
-    </main>
++-----------------------------+        +-----------------------------+        +-----------------------------+
+|   Aerial Drone Node (ROS)   | <----> | Ground Crawler Node A (ROS) | <----> | Ground Crawler Node B (ROS) |
+|   ├─ Perception Node        |        |   ├─ Mapping Node           |        |   ├─ Mapping Node           |
+|   ├─ Path Planner (A*)      |        |   ├─ Motion Controller      |        |   ├─ Motion Controller      |
+|   ├─ Comm Node (LoRa)       |        |   ├─ Comm Node (LoRa)       |        |   ├─ Comm Node (LoRa)       |
++-----------------------------+        +-----------------------------+        +-----------------------------+
+</code></pre>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Market Scope</h2>
+<p>A <b>$6B global SAM</b> in disaster robotics with a projected <b>$100M SOM</b> across India and Southeast Asia.</p>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Revenue Model</h2>
+<ul>
+<li>Hardware sales</li>
+<li>Software licensing</li>
+<li>Maintenance + training</li>
+<li>Custom deployments</li>
+<li>Analytics + data insights</li>
+</ul>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Tech Stack</h2>
+<p><b>Languages:</b> Python, C, C++<br>
+<b>Frameworks:</b> ROS, OpenCV, Flask, PyTorch<br>
+<b>Hardware:</b> Raspberry Pi, LoRa, thermal sensors<br>
+<b>Simulation:</b> Gazebo, RViz<br>
+<b>Communication:</b> LoRa Mesh, MQTT<br>
+<b>Tools:</b> Git, Docker, Linux</p>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Autonomy & Power Management</h2>
+<h3>Drone Behavior States</h3>
+<ul>
+<li><b>Loiter Mode:</b> Hover relay + scanning.</li>
+<li><b>Redeploy Mode:</b> Move to next zone.</li>
+<li><b>Exit Mode:</b> Return-to-base at ≤30% battery.</li>
+</ul>
+<h3>Crawler Battery Logic</h3>
+<ul>
+<li>>40%: exploration</li>
+<li>40–25%: relay node</li>
+<li><25%: hibernate</li>
+</ul>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Links</h2>
+<p>
+<a href="https://www.linkedin.com/company/109938960" target="_blank">LinkedIn</a><br>
+<a href="https://github.com/Rayvn-Labs" target="_blank">GitHub</a>
+</p>
+</section>
+<p style="text-align:center;color:#888;margin-top:4rem;font-style:italic;">When networks go silent, our bots speak.</p>
+</main>
     
     <div class="social-icons">
         <a href="https://www.linkedin.com/company/109938960" target="_blank" rel="noopener noreferrer">
