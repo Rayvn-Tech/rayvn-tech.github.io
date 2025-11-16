@@ -195,13 +195,13 @@
 <main class="main-content">
 <section>
 <h2>Overview</h2>
-<p><b>Rayvn is an IoT-driven autonomous rescue robotics system</b> combining aerial drones and rugged legged ground crawlers connected via a <b>LoRa-based mesh network</b>. It enables <b>offline, real-time victim and animal detection, mapping, and communication</b> in GPS-denied environments.<br><br><i>“Eyes in the sky, hope on the ground.”</i></p>
+<p><b>Rayvn is an IoT-driven autonomous rescue robotics system</b> combining aerial drones and rugged legged ground crawlers connected via a <b>LoRa-based mesh network</b>. It enables <b>offline, real-time victim and animal detection, mapping, and 2-way communication</b> in GPS-denied environments.<br><br><i>“Eyes in the sky, hope on the ground.”</i></p>
 <img src="articles.png" alt="Articles" style="width:100%;max-width:700px;display:block;margin:auto;">
 </section>
 <hr class="section-divider">
 <section>
 <h2>Mission</h2>
-<p>Rayvn bridges visibility and communication gaps during disasters using computer vision, thermal sensing, swarm AI, and autonomous robotics — improving situational awareness when every second matters.</p>
+<p>Rayvn bridges visibility and communication gaps during disasters using computer vision, thermal sensing, gas sensing, swarm AI, and autonomous robotics — improving situational awareness and establishing a critical voice link with survivors when every second matters.</p>
 </section>
 <hr class="section-divider">
 <section>
@@ -228,6 +228,7 @@
 <li><b>Crawler Deployment:</b> Drone deploys legged crawlers to navigate rubble and tight passages.</li>
 <li><b>Mesh Formation:</b> Crawlers form an autonomous LoRa mesh network.</li>
 <li><b>Mapping & Detection:</b> Crawlers scan areas using thermal, gas, smoke, and audio sensors.</li>
+<li><b>Communication Link:</b> Rescuers can initiate two-way audio communication with detected survivors via the crawler node.</li>
 <li><b>Dashboard Sync:</b> Data forms heatmaps and hazard clusters on the base station GUI.</li>
 <li><b>Drone Redeploy/Exit:</b> Depending on battery + mesh stability, drone stays, redeploys, or exits.</li>
 </ul>
@@ -241,6 +242,7 @@
 <li>Thermal + camera + gas + audio sensor fusion</li>
 <li>LoRa-based offline mesh network</li>
 <li>AI victim detection (YOLOv8 + OpenCV)</li>
+<li>Two-way audio communication (Survivors and Rescuers)</li>
 <li>Live rescue dashboard with telemetry</li>
 </ul>
 </section>
@@ -283,9 +285,9 @@
 <h2>Tech Stack</h2>
 <p><b>Languages:</b> Python, C, C++<br>
 <b>Frameworks:</b> ROS, OpenCV, Flask, PyTorch<br>
-<b>Hardware:</b> Raspberry Pi, LoRa, thermal sensors<br>
+<b>Hardware:</b> Raspberry Pi, LoRa, thermal sensors, Gas Sensors (e.g., MQ series for CO/Methane), Microphone Modules, Speaker/Amplifier<br>
 <b>Simulation:</b> Gazebo, RViz<br>
-<b>Communication:</b> LoRa Mesh, MQTT<br>
+<b>Communication:</b> LoRa Mesh, MQTT, Low-latency Audio Streaming Protocols<br>
 <b>Tools:</b> Git, Docker, Linux</p>
 </section>
 <hr class="section-divider">
